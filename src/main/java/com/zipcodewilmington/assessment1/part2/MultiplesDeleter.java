@@ -1,5 +1,8 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -10,18 +13,9 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with evens removed
      */
     public Integer[] deleteEvens(Integer[] ints) {
+        List<Integer> numbers = new ArrayList<Integer>();
+        return null;
 
-        Integer count=0;
-        Integer [] out= new Integer[ints.length];
-        for(int i=0; i<ints.length;i++){
-            if(ints[i] % 2 ==0){
-                out[count]=ints[i];
-                count++;
-            }
-            else{
-            }
-        }
-        return out;
     }
 
     /**
