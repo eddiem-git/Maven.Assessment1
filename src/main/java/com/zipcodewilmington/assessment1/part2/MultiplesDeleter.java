@@ -1,9 +1,6 @@
 package com.zipcodewilmington.assessment1.part2;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by leon on 2/16/18.
@@ -26,22 +23,14 @@ public class MultiplesDeleter {
      * @return all ints which are divisible by 2
      * given an array of integers, named `ints` return an identical array with odds removed
      */
-    public Integer[] deleteOdds(Integer[] values) {
-        ArrayList<Integer> temp = new ArrayList<>(values.a);
-        for (int k=0; k < values.size(); k++)
-        {
-            if (values.get(k) % 2 == 0) // number is even
-            {
-                temp.add(values.get(k));
-            }
+    public Integer[] deleteOdds(Integer[] input) {
+        Integer n = input.length;
+        Integer[] output = new Integer[n];
+        for(int i : input ) {
+            if(i%2 == 0)
+                output[i] = input[i];
         }
-        values.clear();
-        for (int k=0; k<temp.size(); k++)
-        {
-            values.add(temp.get(k));
-        }
-        return values;
-    }
+        return output;
     }
 
     /**

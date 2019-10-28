@@ -32,10 +32,19 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        List<Object> list = new ArrayList<Object>(objectArray.length);
-        list.remove(objectToRemove);
+        List<Object> list = new ArrayList<>();
+        for (int currentIndex = 0; currentIndex < objectArray.length; currentIndex++) {
+            Object currentElement = objectArray[currentIndex];
+
+            // dont add value to remove
+            if(!currentElement.equals(objectToRemove)) {
+                list.add(currentElement);
+            }
+        }
+
         return list.toArray();
     }
+
 
     /**
      * @param objectArray an array of any type of Object
@@ -43,15 +52,19 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the most frequently occuring object in the array
      */
     public static Object getMostCommon(Object[] objectArray) {
-        for (int i = 0; i < objectArray.length; i++) {
-            if (objectArray[i].equals(objectArray[i + 1])) {
-
-                return true;
+        Object mostCommonElement = null;
+        Integer mostAmountOfOccurrences = 0;
+        for (int currentIndex = 0; currentIndex < objectArray.length; currentIndex++) {
+            Object currentElement = objectArray[currentIndex];
+            int numberOfOccurrences = getNumberOfOccurrences(objectArray, currentElement);
+            if(numberOfOccurrences > mostAmountOfOccurrences) {
+                mostAmountOfOccurrences = numberOfOccurrences;
+                mostCommonElement = currentElement;
             }
-
         }
-        return null;
+        return mostCommonElement;
     }
+
 
 
     /**
@@ -60,19 +73,19 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Object getLeastCommon(Object[] objectArray) {
-        HashMap<Object, Object> elementCountMap = new HashMap<Object, Object>();
-        for (Object i : objectArray)
-        {
-            if (elementCountMap.containsKey(i))
-            {
-                elementCountMap.put(i, elementCountMap.get(i));
+        Object leastCommonElement = null;
+        Integer leastAmountOfOccurrences = 999999999;
+        for (int currentIndex = 0; currentIndex < objectArray.length; currentIndex++) {
+            Object currentElement = objectArray[currentIndex];
+            int numberOfOccurrences = getNumberOfOccurrences(objectArray, currentElement);
+            if(numberOfOccurrences <= leastAmountOfOccurrences) {
+                leastAmountOfOccurrences = numberOfOccurrences;
+                leastCommonElement = currentElement;
             }
-            else
-            {
-                elementCountMap.put(i, 1);
-            }
-        }return elementCountMap;
+        }
+        return leastCommonElement;
     }
+
 
     /**
      * @param objectArray      an array of any type of Object
@@ -81,9 +94,18 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
+        List<Object> list = new ArrayList<>();
 
-       // Object resultArray[] = ArrayUtils.addAll(objectArray, objectArrayToAdd);
-        return null;
+        for (int currentIndex = 0; currentIndex < objectArray.length; currentIndex++) {
+            Object currentElement = objectArray[currentIndex];
+            list.add(currentElement);
+        }
+
+        for (int currentIndex = 0; currentIndex < objectArrayToAdd.length; currentIndex++) {
+            Object currentElement = objectArray[currentIndex];
+            list.add(currentElement);
+        }
+
+        return list.toArray();
     }
-
 }
