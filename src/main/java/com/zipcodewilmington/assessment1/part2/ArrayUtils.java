@@ -2,8 +2,8 @@ package com.zipcodewilmington.assessment1.part2;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Stream;
 
 /**
  * Created by leon on 2/16/18.
@@ -60,7 +60,18 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Object getLeastCommon(Object[] objectArray) {
-        return null;
+        HashMap<Object, Object> elementCountMap = new HashMap<Object, Object>();
+        for (Object i : objectArray)
+        {
+            if (elementCountMap.containsKey(i))
+            {
+                elementCountMap.put(i, elementCountMap.get(i));
+            }
+            else
+            {
+                elementCountMap.put(i, 1);
+            }
+        }return elementCountMap;
     }
 
     /**
@@ -71,8 +82,8 @@ public class ArrayUtils {
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
 
-    Object[] newArray = new Object[objectArray.length + objectArrayToAdd.length];
-    return newArray;
+       // Object resultArray[] = ArrayUtils.addAll(objectArray, objectArrayToAdd);
+        return null;
     }
-}
 
+}

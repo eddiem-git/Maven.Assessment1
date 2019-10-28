@@ -1,6 +1,8 @@
 package com.zipcodewilmington.assessment1.part2;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -14,8 +16,9 @@ public class MultiplesDeleter {
      */
     public Integer[] deleteEvens(Integer[] ints) {
         List<Integer> numbers = new ArrayList<Integer>();
+        numbers.removeIf(number -> number % 2 == 0);
+        Collections.sort(numbers);
         return null;
-
     }
 
     /**
@@ -23,8 +26,22 @@ public class MultiplesDeleter {
      * @return all ints which are divisible by 2
      * given an array of integers, named `ints` return an identical array with odds removed
      */
-    public Integer[] deleteOdds(Integer[] ints) {
-        return null;
+    public Integer[] deleteOdds(Integer[] values) {
+        ArrayList<Integer> temp = new ArrayList<>(values.a);
+        for (int k=0; k < values.size(); k++)
+        {
+            if (values.get(k) % 2 == 0) // number is even
+            {
+                temp.add(values.get(k));
+            }
+        }
+        values.clear();
+        for (int k=0; k<temp.size(); k++)
+        {
+            values.add(temp.get(k));
+        }
+        return values;
+    }
     }
 
     /**
@@ -33,16 +50,26 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by 3 removed
      */
     public Integer[] deleteMultiplesOf3(Integer[] ints) {
+        ArrayList<Integer> multiple3 = new ArrayList<>();
+
+        for (int i = 0; i < ints.length; i++) {
+            if ((ints[i] % 3) == 0) {
+                multiple3.remove(ints[i]);
+
+            }
+        }
         return null;
     }
 
     /**
-     * @param ints array of Integer objects
+     * @param ints     array of Integer objects
      * @param multiple the multiple to evaluate divisibility against
      * @return all ints which are not divisible by the `multiple` specified
-     * given an array of integers, named `ints` return an identical array with numbers indivisible by `multiple` removed
+     * given an array of integers, named `ints` return an identical array with numbers
+     * indivisible by `multiple` removed
      */
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
         return null;
+
     }
 }
