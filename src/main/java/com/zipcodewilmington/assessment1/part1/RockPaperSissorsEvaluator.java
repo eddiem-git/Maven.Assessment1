@@ -13,7 +13,17 @@ public class RockPaperSissorsEvaluator {
      * @return the respective winning move
      */
     public String getWinningMove(String handSign) {
-        return null;
+            String result = "paper";
+
+             if(handSign.equals(PAPER)){
+                result = "paper";
+            }   else if(handSign.equals(SCISSOR)){
+                result = "scissors";
+            }   else if(handSign.equals(ROCK)){
+                result = "rock";
+
+            }
+        return result;
     }
 
     /**
