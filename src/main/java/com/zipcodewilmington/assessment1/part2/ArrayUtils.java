@@ -71,8 +71,8 @@ public class ArrayUtils {
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
 
-    Object[] oj = new Object[objectArray.length + objectArrayToAdd.length];
-    return null;
+    Object[] newArray = new Object[objectArray.length + objectArrayToAdd.length];
+    return newArray;
     }
 }
 
