@@ -31,10 +31,10 @@ public class ArrayUtils {
      * @return an array with identical content excluding the specified `objectToRemove`
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
-    public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
+    public static Object[] removeValue(Object[] inputArray, Object objectToRemove) {
         List<Object> list = new ArrayList<>();
-        for (int currentIndex = 0; currentIndex < objectArray.length; currentIndex++) {
-            Object currentElement = objectArray[currentIndex];
+        for (int currentIndex = 0; currentIndex < inputArray.length; currentIndex++) {
+            Object currentElement = inputArray[currentIndex];
 
             // dont add value to remove
             if(!currentElement.equals(objectToRemove)) {
@@ -44,7 +44,6 @@ public class ArrayUtils {
 
         return list.toArray();
     }
-
 
     /**
      * @param objectArray an array of any type of Object
