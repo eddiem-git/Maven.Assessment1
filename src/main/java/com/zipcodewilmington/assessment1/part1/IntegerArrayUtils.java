@@ -10,31 +10,33 @@ public class IntegerArrayUtils {
      * @return the sum of `intArray`
      */
     public static Integer getSum(Integer[] intArray) {
-
-        int sum = 0;
-
-        for (int i : intArray) {
-            sum += i;
-        }return sum;
+        Integer result = 0;
+        for (int currentIndex = 0; currentIndex < intArray.length; currentIndex++) {
+            result += intArray[currentIndex];
+        }
+        return result;
     }
     /**
      * @param intArray an array of integers
      * @return the product of `intArray`
      */
     public static Integer getProduct(Integer[] intArray) {
-        int n = intArray.length;
-
-        int result = 1;
-        for (int i = 0; i < n; i++)
-            result = result * intArray[i];
-        return result;
+        Integer result = 1;
+        for (int currentIndex = 0; currentIndex < intArray.length; currentIndex++) {
+            result *= intArray[currentIndex];
+        }
+       return result;
     }
         /**
          * @param intArray an array of integers
          * @return the sum of `intArray` divided by number of elements in `intArray`
          */
     public static Double getAverage(Integer[] intArray) {
-            Double Arraylength = (double) getSum(intArray) / intArray.length;
-             return Arraylength;
+        double total = 0;
+        for(int currentPosition = 0; currentPosition<intArray.length; currentPosition++){
+            total = total + intArray[currentPosition];
+        }
+        double average = total / intArray.length;
+        return average;
     }
 }

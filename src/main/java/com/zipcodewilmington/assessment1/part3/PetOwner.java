@@ -1,9 +1,13 @@
 package com.zipcodewilmington.assessment1.part3;
 
+import java.util.List;
+
 /**
  * Created by leon on 2/16/18.
  */
 public class PetOwner {
+    List<Pet> pet;
+
     /**
      * @param name name of the owner of the Pet
      * @param pets array of Pet object

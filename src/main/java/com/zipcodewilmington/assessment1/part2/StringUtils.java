@@ -15,7 +15,7 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return an array of strings, each element representative of a respective word in the sentence
      */
     public static String[] getWords(String sentence) {
-        return sentence.split(" ");
+        return null;
     }
 
 
@@ -25,8 +25,7 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return the first word of the sentence
      */
     public static String getFirstWord(String sentence) {
-        String[] words = getWords(sentence);
-        return words[0];
+        return null;
     }
 
     /**
@@ -35,9 +34,7 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return the first word with identical contents in reverse order
      */
     public static String reverseFirstWord(String sentence) {
-        String firstWordReverse = getFirstWord(sentence);
-        String result = BasicStringUtils.reverse(firstWordReverse);
-        return result;
+        return null;
     }
 
     /**
@@ -46,9 +43,7 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return the first word with identical contents in reverse order with the first character capitalized
      */
     public static String reverseFirstWordThenCamelCase(String sentence) {
-        String firstWordReverse = reverseFirstWord(sentence);
-        String result = BasicStringUtils.camelCase(firstWordReverse);
-        return result;
+        return null;
     }
 
 
@@ -60,9 +55,6 @@ public class StringUtils {
      * given a string and index, return an identical string excluding the character at the specified index
      */
     public static String removeCharacterAtIndex(String str, int index) {
-        StringBuilder sb = new StringBuilder(str);
-        sb.deleteCharAt(index);
-        String result = sb.toString();
-        return result;
+        return null;
     }
 }

@@ -7,15 +7,15 @@ public class IntegerUtils {
 
 
     /**
-     * @param n integer value input by client
+     * @param num integer value input by client
      * @return the sum of all integers between 0 and not including `n`
      */
-    public static Integer getSumOfN(Integer n) {
+    public static Integer getSumOfN(Integer  num) {
         int sum = 0;
-        for (int i = 0; i < n; i++) {
-            sum += n - i;
+        while (num > 0){
+            sum = sum + num % 10;
+            num = num / 10;
         }
-
         return sum;
     }
 
@@ -25,11 +25,7 @@ public class IntegerUtils {
      */
     public static Integer getProductOfN(Integer n) {
 
-        int product = 1;
-        for (int number = 1; number <= n; number++) {
-            product *= number;
-
-        }return product;
+        return null;
     }
 
     /**
@@ -38,12 +34,6 @@ public class IntegerUtils {
      */
     public static Integer reverseDigits(Integer val) {
 
-        int reversed = 0;
-        for (; val != 0; val /= 10) {
-            int digit = val % 10;
-            reversed = reversed * 10 + digit;
-        }
-        return reversed;
-
+        return null;
     }
 }

@@ -28,9 +28,9 @@ public class BasicArrayUtils {
      * @return the last element in the array
      */
     public static String getLastElement(String[] stringArray) {
-        String[] bits = stringArray;
-        String lastOne = bits[bits.length-1];
-        return lastOne;
+        Integer lastIndex = stringArray.length-1;
+        String lastElement = stringArray[lastIndex];
+        return lastElement;
 
     }
 
@@ -39,8 +39,8 @@ public class BasicArrayUtils {
      * @return the second to last element in the array
      */
     public static String getSecondToLastElement(String[] stringArray) {
-        String[] bits = stringArray;
-        String SecondtoLastOne = bits[bits.length-2];
-        return SecondtoLastOne;
+       Integer second2LastIndex = stringArray.length-2;
+       String second2LastElement = stringArray[second2LastIndex];
+        return second2LastElement;
     }
 }
