@@ -13,21 +13,23 @@ public class IntegerUtils {
     public static Integer getSumOfN(Integer n) {
         int sum = 0;
         for (int currentNumber = 0; currentNumber <= n; currentNumber++) {
-             sum += currentNumber;
+            sum += currentNumber;
         }
         return sum;
-        }
+    }
 
     /**
-         * @param n integer value input by client
-         * @return the product of all integers between 0 and not including `num`
-         */
+     * @param n integer value input by client
+     * @return the product of all integers between 0 and not including `num`
+     */
     public static Integer getProductOfN(Integer n) {
         int product = 1;
         for (int currentNumber = 1; currentNumber <= n; currentNumber++) {
             product *= currentNumber;
-        }return product;
+        }
+        return product;
     }
+
     /**
      * @param num integer value input by client
      * @return integer with identical digits in the reverse order
