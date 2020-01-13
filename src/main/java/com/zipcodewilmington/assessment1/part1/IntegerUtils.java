@@ -12,31 +12,22 @@ public class IntegerUtils {
      */
     public static Integer getSumOfN(Integer n) {
         int sum = 0;
-
-        while (n != 0)
-        {
-            sum += sum + n % 10;
-            n = n/10;
+        for (int currentNumber = 0; currentNumber <= n; currentNumber++) {
+             sum += currentNumber;
         }
-
         return sum;
-    }
+        }
 
     /**
-     * @param n integer value input by client
-     * @return the product of all integers between 0 and not including `n`
-     */
-    public static Integer getProductOfN(Integer n)  {
+         * @param n integer value input by client
+         * @return the product of all integers between 0 and not including `num`
+         */
+    public static Integer getProductOfN(Integer n) {
         int product = 1;
-
-        while (n != 0) {
-            product = product * (n % 10);
-            n = n / 10;
-        }
-
-        return product;
+        for (int currentNumber = 1; currentNumber <= n; currentNumber++) {
+            product *= currentNumber;
+        }return product;
     }
-
     /**
      * @param num integer value input by client
      * @return integer with identical digits in the reverse order
